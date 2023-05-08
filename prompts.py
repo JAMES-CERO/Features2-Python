@@ -14,3 +14,58 @@ def all_true(elemt):
 print( all_true([True, True, True]))
 print( all_true([True, True, False]))
 
+# one_true - Returns True if one of the elements in an iterable is true. Hint: there is an existing built-in function that could be very helpful here.
+
+def one_true(elemnt):
+    return any(elemnt)
+
+print( one_true([True, True, True]))
+print( one_true([True, True, False]))
+
+# recursive_factorial - Uses recursion to find the factorial of an integer.
+
+def recursive_factorial(int):
+    if int <= 1:
+        return 1
+    else: 
+        return int * recursive_factorial(int -1)
+    
+print(recursive_factorial(3))
+print(recursive_factorial(6))
+
+# recursive_deduplicate - Recursively removes all adjacent duplicate letters from a string.
+
+def recursive_deduplicate(str, i=0):
+    if len(str) <= 1 or i == len(str)-1:
+        return str
+    else:
+        if str[i] == str[i+1]:
+            return recursive_deduplicate(str[0:i]+ str[i+1], i)
+        else:
+            return recursive_deduplicate(str, i+1)
+        
+print(recursive_deduplicate("aaaa"))
+print(recursive_deduplicate("aaba"))
+print(recursive_deduplicate("apple"))
+print(recursive_deduplicate(""))
+
+# Input: AABBCCDD
+# Output: ABCD
+# recursive_reverse - Uses recursion to reverse a string.
+
+def recursive_reverse(str, i=0):
+    if len(str) == 0:
+        return ''
+    elif i == len(str)-1:
+        return str[0]
+    else:
+        return str[-1-i] + recursive_reverse(str, i+1)
+
+print(recursive_reverse('casa'))
+# def recursive_reverse(str):
+#     if len(str) == 1 :
+#         return str 
+#     else:
+#         return str[::-1]
+    
+# print(recursive_reverse('casa'))
